@@ -1,112 +1,114 @@
 {
-  "Narratives": {
-    "/readme.md": [
-      {
-        "name": " hello world narrative",
-        "type": "FS",
-        "items": [
-          {
-            "type": "text",
-            "content": "Hello World!"
-          },
-          {
-            "type": "text",
-            "content": "Thisisastoryallabouthow...."
-          },
-          {
-            "type": "link",
-            "content": {
-              "id": "code link",
-              "path": "/sort_algorithms/bubblesort.js"
-            }
-          },
-          {
-            "type": "link",
-            "content": {
-              "id": "bubble narrative",
-              "path": "/fibonacci.js"
-            }
-          },
-          {
-            "type": "text",
-            "content": " FIN "
-          }
-        ]
-      }
-    ],
-    "/sort_algorithms/bubblesort.js": [
-      {
-        "name": "code link",
-        "type": "FS",
-        "items": [
-          {
-            "type": "text",
-            "content": "A bubble sort program"
-          },
-          {
-            "type": "text",
-            "content": "Lets see it in action "
-          },
-          {
-            "type": "link",
-            "content": {
-              "id": "codetest2",
-              "path": "/sort_algorithms/bubblesort.js/Program"
-            }
-          }
-        ]
-      }
-    ],
-    "/sort_algorithms/bubblesort.js/Program": [
-      {
-        "name": "codetest2",
-        "type": "Code",
-        "narrativeHooks": {
-          "body/0/body/body/0": {
-            "path": "body/0/body/body/0",
-            "items": [
-              {
-                "type": "text",
-                "content": "Here we set the length"
-              },
-              {
-                "type": "vcode",
-                "content": "var barchart = new BarChart(values); \n display(barchart.domEl); "
-              }
-            ]
-          },
-          "body/0/body/body/1/body/body/1/body/body/0/test": {
-            "path": "body/0/body/body/1/body/body/1/body/body/0/test",
-            "items": [
-              {
-                "type": "text",
-                "content": "Here it checks if it should swap these values"
-              },
-              {
-                "type": "vcode",
-                "content": "barchart.highlight([i,i+1],'grey');"
-              }
-            ]
-          },
-          "b": {
-            "path": "body/0/body/body/1/body/body/1/body/body/0/consequent/body/3",
-            "items": [
-              {
-                "type": "text",
-                "content": " These should be swapped . So lets swap"
-              },
-              {
-                "type": "vcode",
-                "content": " barchart.highlight([i,i+1],'blue'); \n barchart.update(values); display(barchart.domEl); "
-              }
-            ]
-          }
-        }
-      }
-    ]
-  },
-  
-  "VObjects": {
-    "Test": "function(){}"
-  }
+	"Narratives": {
+		"/readme.md": [
+			{
+				"name": " hello world narrative",
+				"type": "FS",
+				"items": [
+					{
+						"type": "text",
+						"content": "Hello World!"
+					},
+					{
+						"type": "text",
+						"content": "Thisisastoryallabouthow...."
+					},
+					{
+						"type": "link",
+						"content": {
+							"id": "code link",
+							"path": "/sort_algorithms/bubblesort.js"
+						}
+					},
+					{
+						"type": "link",
+						"content": {
+							"id": "bubble narrative",
+							"path": "/fibonacci.js"
+						}
+					},
+					{
+						"type": "text",
+						"content": " FIN "
+					}
+				]
+			}
+		],
+		"/sort_algorithms/bubblesort.js": [
+			{
+				"name": "code link",
+				"type": "FS",
+				"items": [
+					{
+						"type": "text",
+						"content": "A bubble sort program"
+					},
+					{
+						"type": "text",
+						"content": "Lets see it in action "
+					},
+					{
+						"type": "link",
+						"content": {
+							"id": "codetest2",
+							"path": "/sort_algorithms/bubblesort.js/Program"
+						}
+					}
+				]
+			}
+		],
+		"/sort_algorithms/bubblesort.js/Program": [
+			{
+				"name": "codetest2",
+				"type": "Code",
+				"narrativeHooks": {
+					"body/0/body/body/0": {
+						"path": "body/0/body/body/0",
+						"items": [
+							{
+								"type": "text",
+								"content": "Here we set the length"
+							},
+							{
+								"type": "vcode",
+								"content": "var barchart = new BarChart(values); \n display(barchart.domEl); "
+							}
+						]
+					},
+					"body/0/body/body/1/body/body/1/body/body/0/test": {
+						"path": "body/0/body/body/1/body/body/1/body/body/0/test",
+						"items": [
+							{
+								"type": "text",
+								"content": "Here it checks if it should swap these values"
+							},
+							{
+								"type": "vcode",
+								"content": "barchart.highlight([i,i+1],'grey');"
+							}
+						]
+					},
+					"b": {
+						"path": "b",
+						"items": [
+							{
+								"type": "text",
+								"content": " These should be swapped . So lets swap"
+							},
+							{
+								"type": "vcode",
+								"content": " barchart.highlight([i,i+1],'blue'); \n barchart.update(values); display(barchart.domEl); "
+							}
+						]
+					}
+				}
+			}
+		]
+	},
+	"VObjects": {
+		"VArray": "function VArray(data, vertical) {\n  var domEl = document.createElement('div');\n  var svg = d3.select(domEl).append('svg');\n  function update(newData) {\n    var boxSize = 20;\n    svg.selectAll('rect').data(newData).enter().append('svg:rect').attr('width', boxSize).attr('height', boxSize).attr('stroke', 'black').attr('fill', 'rgba(0,0,0,0)').attr('x', function (d, i) {\n      return boxSize * i;\n    });\n    svg.selectAll('text').data(newData).enter().append('svg:text').attr('x', function (d, i) {\n      return boxSize * i + 5;\n    }).attr('y', 15).attr('fill', 'black');\n    svg.selectAll('text').data(newData).text(function (d) {\n      return d;\n    });\n  }\n  update(data);\n  return {\n    domEl: domEl,\n    update: function (data) {\n      update(data);\n    }\n  };\n}",
+		"BarChart": "function BarChart(data) {\n  var domEl = document.createElement('div');\n  var chart = d3.select(domEl).append('svg');\n  var height = this.height, width = this.width;\n  var barWidth = width / data.length;\n  var yScale = d3.scale.linear().range([\n    height,\n    0\n  ]);\n  yScale.domain([\n    0,\n    d3.max(data)\n  ]);\n  var barGroup;\n  function update(newData) {\n    barGroup = chart.selectAll('g').data(newData);\n    var barGroupEnter = barGroup.enter().append('g');\n    barGroupEnter.attr('transform', function (d, i) {\n      return 'translate(' + barWidth * i + ',0)';\n    });\n    barGroupEnter.append('rect').attr('fill', 'green').attr('y', height).attr('height', function (d) {\n      return height - yScale(d);\n    }).attr('width', barWidth - 1);\n    barGroupEnter.append('text');\n    barGroup.select('rect').transition().attr('height', function (d) {\n      return height - yScale(d);\n    }).attr('y', function (d) {\n      return yScale(d);\n    });\n    barGroup.select('text').attr('y', function (d) {\n      return yScale(d) + 3;\n    }).attr('dy', '.75em').text(function (d) {\n      return '' + d;\n    });\n  }\n  update(data);\n  function highlight(toHighlight, color) {\n    barGroup.select('rect').attr('fill', function (d, i) {\n      return toHighlight.indexOf(i) > -1 ? color : 'green';\n    });\n  }\n  return {\n    domEl: domEl,\n    update: update,\n    highlight: highlight\n  };\n}",
+		"List": "function List(data) {\n  var domEl = document.createElement('div');\n  var svg = d3.select(domEl).append('svg');\n  function update(newData) {\n    var boxWidth = 100;\n    var boxHeight = 25;\n    svg.selectAll('rect').data(newData).enter().append('svg:rect').attr('width', boxWidth).attr('height', boxHeight).attr('stroke', 'black').attr('fill', 'rgba(0,0,0,0)').attr('y', function (d, i) {\n      return boxHeight * i;\n    });\n    svg.selectAll('text').data(newData).enter().append('svg:text').attr('y', function (d, i) {\n      return boxHeight * i + 15;\n    }).attr('x', 15).attr('fill', 'black');\n    svg.selectAll('text').data(newData).text(function (d) {\n      return d;\n    });\n  }\n  update(data);\n  return {\n    domEl: domEl,\n    update: update\n  };\n}",
+		"Test": "function (data) {\n  var domEl = document.createElement('div');\n  var chart = d3.select(domEl).append('svg');\n  var height = this.height, width = this.width;\n  var barWidth = width / data.length;\n  var yScale = d3.scale.linear().range([\n    height,\n    0\n  ]);\n  yScale.domain([\n    0,\n    d3.max(data)\n  ]);\n  var barGroup;\n  function update(newData) {\n    barGroup = chart.selectAll('g').data(newData);\n    var barGroupEnter = barGroup.enter().append('g');\n    barGroupEnter.attr('transform', function (d, i) {\n      return 'translate(' + barWidth * i + ',0)';\n    });\n    barGroupEnter.append('rect').attr('fill', 'green').attr('y', height).attr('height', function (d) {\n      return height - yScale(d);\n    }).attr('width', barWidth - 1);\n    barGroupEnter.append('text');\n    barGroup.select('rect').transition().attr('height', function (d) {\n      return height - yScale(d);\n    }).attr('y', function (d) {\n      return yScale(d);\n    });\n    barGroup.select('text').attr('y', function (d) {\n      return yScale(d) + 3;\n    }).attr('dy', '.75em').text(function (d) {\n      return '' + d;\n    });\n  }\n  update(data);\n  function highlight(toHighlight, color) {\n    barGroup.select('rect').attr('fill', function (d, i) {\n      return toHighlight.indexOf(i) > -1 ? color : 'green';\n    });\n  }\n  return {\n    domEl: domEl,\n    update: update,\n    highlight: highlight\n  };\n}"
+	}
 }
