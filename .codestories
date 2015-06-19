@@ -97,7 +97,7 @@
               },
               {
                 "type": "vcode",
-                "content": " barchart.highlight([i,i+1],'blue'); \n barchart.update(values); display(barchart.domEl); "
+                "content": " barchart.highlight([i,i+1],'blue'); \n barchart.update(values);"
               }
             ]
           },
